@@ -3,24 +3,42 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/87/Color_square_cm.gif');
+  background-repeat: repeat;
   font-size: 18px;
   overflow: hidden;
+  font-family: Helvetica, Arial;
+  color: black;
+  font-weight: normal;
 }
-body, a:link, a:visited, a:active{
-  color: lightblue;
+a:link, a:visited, a:active{
+  color: black;
+  width: 155px;
+  min-width: 155px;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
 }
-.title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
+a:hover {
+  border-bottom: 3px solid black;
 }
 .topbar{
-  height:32px;
-  background-color: #555;
-  z-index: 2;
+  height: 70px;
+  min-width: 750px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-start;
+  
 }
 .title{
-  background-color: #777;
+  opacity: 0.4;
+  border-right: 1px solid black;
+  min-width: 155px;
+  height: 65px;
+  padding: 10px;
+  float: right;
 }
 .dancer{
   display: flex;
@@ -28,7 +46,10 @@ body, a:link, a:visited, a:active{
   align-items: center;
   position: absolute;
   transition: 0.5s;
-  z-index: -1;
+  z-index: 1;
+}
+.dancer:hover {
+  filter: invert(1.0);
 }
 .dancer-blumbot {
   width: 150px;
