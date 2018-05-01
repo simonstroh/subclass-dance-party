@@ -7,13 +7,6 @@ body{
   font-size: 18px;
   overflow: hidden;
 }
-.invisible-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 120px;
-  border-bottom: 4px solid black;
-}
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -24,6 +17,7 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+  z-index: 2;
 }
 .title{
   background-color: #777;
@@ -34,6 +28,7 @@ body, a:link, a:visited, a:active{
   align-items: center;
   position: absolute;
   transition: 0.5s;
+  z-index: -1;
 }
 .dancer-blumbot {
   width: 150px;

@@ -16,7 +16,7 @@ makeSpinningDancer.prototype.spin = function() {
 
 makeSpinningDancer.prototype.unspin = function() {
   var styleSetting = {
-    transform: 'rotate(-0deg)'
+    transform: 'rotate(0deg)'
   }
   this.$node.css(styleSetting)
 }
