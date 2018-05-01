@@ -12,23 +12,22 @@ describe('spinningDancer', function() {
     expect(spinningDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(spinningDancer.$node, 'toggle');
-    spinningDancer.step();
-    expect(spinningDancer.$node.toggle.called).to.be.true;
+  it('should have a node that is instatiated', function() {
+    function checkNode(node) {
+      if (node.$node) {
+        return true
+      } else {
+        return false
+      }
+    }
+    expect(checkNode(spinningDancer)).to.be.true;
   });
 
   describe('dance', function() {
-    it('should call step at least once per second', function() {
-      sinon.spy(spinningDancer, 'step');
-      expect(spinningDancer.step.callCount).to.be.equal(0);
-      clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
-      clock.tick(timeBetweenSteps);
-
-      expect(spinningDancer.step.callCount).to.be.equal(1);
-
-      clock.tick(timeBetweenSteps);
-      expect(spinningDancer.step.callCount).to.be.equal(2);
+    it('should have position for the top and left of the node', function() {
+      var newSpinningDancer = new makeSpinningDancer(10, 100, 100)
+      expect(newSpinningDancer.top).to.equal(10);
+      expect(newSpinningDancer.left).to.equal(100);
     });
   });
 });

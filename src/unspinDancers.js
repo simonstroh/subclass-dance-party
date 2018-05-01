@@ -7,7 +7,7 @@ makeUnspinningDancer.prototype.constructor = makeUnspinningDancer;
 
 makeUnspinningDancer.prototype.unspin = function() {
   var styleSetting = {
-    transform: 'rotate(180deg)'
+    transform: 'rotate(-180deg)'
   }
   $('.dancer').css(styleSetting)
 }
