@@ -31,28 +31,7 @@ $(document).ready(function() {
     $('body').append(dancer.$node);
   });
   $('body').on('click', '.dancer', function(event) {
-    var hypotenuses = []
-    var closestDancers = []
-    var dancerTop = event.clientY
-    var dancerLeft = event.clientX
-    for (let i = 0; i < window.dancers.length; i++) {
-      var dancerDistanceTop = dancerTop - window.dancers[i].top
-      var dancerDistanceLeft = dancerLeft - window.dancers[i].left
-      var hypotenus = Math.sqrt(Math.pow(dancerDistanceTop, 2) + Math.pow(dancerDistanceLeft, 2))
-      hypotenuses.push(hypotenus)
-    }
-    var newHypotenuses = hypotenuses.slice()
-    newHypotenuses.sort(function(a, b) {
-      return a - b;
-    });
-    var closestDancerIndex = hypotenuses.indexOf(newHypotenuses[0])
-    var secondClosestDancerIndex = hypotenuses.indexOf(newHypotenuses[1])
-    closestDancers.push(window.dancers[closestDancerIndex])
-    closestDancers.push(window.dancers[secondClosestDancerIndex])
-    closestDancers.forEach(function(i) {
-      i.$node.css('top', '70px')
-      i.spin()
-    })
+    $(this).css({'top':'70px','transform':'rotate(180deg)'})
   })
 });
 
